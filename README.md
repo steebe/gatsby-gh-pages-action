@@ -56,6 +56,9 @@ configuration options:
   Provided as an [input][github-action-input].
   Defaults to nothing.
 
+- **package-manager-force**: Determines whether or not to apply `--force` to the `npm`
+  or `yarn` install command. Defaults to nothing.
+
 - **skip-publish**: Builds your Gatsby site but skips publishing by setting it to `true`,
   effectively performing a test of the build process using the live configuration.
   Provided as an [input][github-action-input].
