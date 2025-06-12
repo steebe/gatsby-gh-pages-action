@@ -19,6 +19,10 @@ inputs:
     description: "Additional arguments that get passed to `gatsby build`."
     required: false
     default: ""
+  package-manager-force:
+    description: "The ability to force your package manager to install dependencies past errors"
+    required: false
+    default: ""
   skip-publish:
     description: "Builds your Gatsby site but skips publishing by setting it to `true`. Helpful for testing/debugging Workflows."
     required: false
