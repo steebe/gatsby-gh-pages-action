@@ -164,4 +164,10 @@ describe('Gatsby Publish action', () => {
     expect(execSpy).nthCalledWith(4, 'git config user.name', ['enrikke'], {cwd: './public'})
     expect(execSpy).nthCalledWith(5, 'git config user.email', ['enrikke@users.noreply.github.com'], {cwd: './public'})
   })
+
+  it('invokes package manager with the --force flag', async () => {
+    inputs['package-manager-force'] = 'true'
+    await run()
+    expect(execSpy).toBeCalledWith('npm install', ['--force'], {cwd: '.'})
+  })
 })
