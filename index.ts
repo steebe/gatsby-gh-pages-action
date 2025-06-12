@@ -32,9 +32,9 @@ async function run(): Promise<void> {
 
     const workingDir = core.getInput('working-dir') || '.'
     const pkgManager = (await ioUtil.exists(`${workingDir}/yarn.lock`)) ? 'yarn' : 'npm'
-    const packageManagerForce = core.getInput('package-manager-force')?.filter(Boolean);
+    const packageManagerForce = core.getInput('package-manager-force')
     console.log(`Installing your site's dependencies using ${pkgManager}.`)
-    const installCmd = `${pkgManager} install` + packageManagerForce ? " --force" : "";
+    const installCmd = `${pkgManager} install` + packageManagerForce ? ' --force' : ''
     await exec.exec(installCmd, [], {cwd: workingDir})
     console.log('Finished installing dependencies.')
 
